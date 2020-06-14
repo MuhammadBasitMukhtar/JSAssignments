@@ -446,3 +446,375 @@ else
     alert("it is negative");
 
 }
+
+// Chapter 12 - Task 1
+
+var inp = prompt("Enter: ");
+if(inp.charCodeAt(0) >= 65 && inp.charCodeAt(0) <= 90)
+{
+    document.write("<br><br>It is a Uppercase letter!.")
+}
+else if(inp.charCodeAt(0) >= 97 && inp.charCodeAt(0) <= 122)
+{
+    document.write("<br><br>It is a Lowercase letter!.")
+}
+else
+{
+    document.write("<br><br>It is a Number!.")
+}
+
+// Chapter 12 - Task 4
+
+var inp = prompt("Enter Letter: ");
+function CheckVowel(inputCharacter)
+{
+    if(inputCharacter.match(/[aeiouAEIOU]/))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+document.write("<br><br>" + CheckVowel(inp));
+
+
+// Chapter 12 - Task 5
+var Password = "CorrectPass";
+var input = prompt("Enter Password: ");
+if(input === Password)
+{
+alert("Correct! The password you entered matches the original password");
+}
+else if(input == "")
+{
+    alert("Please enter your password");
+}
+else
+{
+    alert("Incorrect password");
+}
+
+
+// Chapter 12 - Task 6
+
+var greeting;
+var hour = 13;
+if (hour < 18) {
+greeting = "Good day";
+}
+else
+{
+greeting = "Good evening";
+}
+alert(greeting);
+
+// Chapter 12 - Task 7
+var time = prompt("Enter Time in 2400 hrs Format: ");
+if(time >= 0000 && time < 1200)
+{
+    alert("Good Morning!");
+}
+else if(time >= 1200 && time < 1700)
+{
+    alert("Good Afternoon!");
+}
+else if(time >= 1700 && time < 2100)
+{
+    alert("Good Evening!");
+}
+else if(time >= 2100 && time < 2359)
+{
+    alert("Good Night!");
+}
+
+
+
+// Chapter 14
+
+// Chapter 14 - Task 1
+
+var myArray = [];
+
+// Chapter 14 - Task 2
+
+var myArray = {};
+
+// Chapter 14 - Task 3
+
+var strArray = new Array("Car", "Bike", "Motorcycle");
+
+// Chapter 14 - Task 4
+
+var intArray = [4,5,6];
+
+// Chapter 14 - Task 5
+
+var boolArray = [true,false];
+
+// Chapter 14 - Task 6
+
+var mixArray = ["This", 1, 2, "is",4,"Mixed","Array"];
+
+// Chapter 14 - Task 7
+
+var Quals = ["SSC","HSC","BCS","BS","BCOM","MS","M.Phil","PhD"];
+document.write("Qualifications<br><br>")
+for(i = 0 ; i < Quals.length; i++)
+{
+    document.write(i+1 + ") " + Quals[i] + "<br>");
+}
+
+// Chapter 14 - Task 8
+
+var stdName = ["Basit", "Hammad", "Yasir"];
+var stdMarks = new Array(320,230,480);
+
+function GetPerc(marks)
+{
+    var res = marks * 100 / 500;
+    return res;
+}
+for (let index = 0; index < stdName.length; index++) {
+    document.write("Score of " + stdName[index] + " is " + stdMarks[index] + ". Percentage: " + GetPerc(stdMarks[index]) + "%<br>");
+}
+
+
+// Chapter 14 - Task 9 
+document.writeln("<br><br>Original List<br><br>");
+var colors = ["Red","Blue","Yellow"];
+for (let index = 0; index < colors.length; index++) {
+    document.writeln(colors[index] + "<br>");
+}
+document.writeln("<button onclick='AddBegin()'>Add Color in Beginning</button><br>");
+document.writeln("<button onclick='AddEnd()'>Add Color in Ending</button><br>");
+document.writeln("<button onclick='Add2Color()'>Add 2 Color in Beginning</button><br>");
+document.writeln("<button onclick='RemoveBegin()'>Remove Color in Beginning</button><br>");
+document.writeln("<button onclick='RemoveEnd()'>Remove Color in Ending</button><br>");
+document.writeln("<button onclick='AddSpecificPos()'>Add Color At Desired Pos.</button><br>");
+document.writeln("<button onclick='RemoveSpecificPos()'>Remove Color at Desired Pos</button><br>");
+function AddBegin()
+{
+    var newcolor = prompt("Enter new color to add in beginning: ");
+    colors.unshift(newcolor);
+    document.writeln("<br><br>After Adding in Beginning List<br><br>");
+    for (let index = 0; index < colors.length; index++) {
+        document.write(colors[index] + "<br>");
+    }
+}
+
+function AddEnd()
+{
+    var newcolor = prompt("Enter new color to add in ending: ");
+    colors.push(newcolor);
+    document.writeln("<br><br>After Adding in Ending List<br><br>");
+    for (let index = 0; index < colors.length; index++) {
+        document.write(colors[index] + "<br>");
+    }
+}
+
+function Add2Color()
+{
+    colors.push("Magenta", "Cyan");
+    document.writeln("<br><br>After Adding in Beginning List<br><br>");
+    for (let index = 0; index < colors.length; index++) {
+        document.write(colors[index] + "<br>");
+    }
+}
+
+function RemoveBegin()
+{
+    colors.shift();
+    document.writeln("<br><br>After Removing from Beginning List<br><br>");
+    for (let index = 0; index < colors.length; index++) {
+        document.write(colors[index] + "<br>");
+    }
+}
+function RemoveEnd()
+{
+    colors.pop();
+    document.writeln("<br><br>After Removing from Ending List<br><br>");
+    for (let index = 0; index < colors.length; index++) {
+        document.write(colors[index] + "<br>");
+    }
+}
+function AddSpecificPos()
+{
+    var newcolorpos = parseInt(prompt("Enter position: "));
+    var newcolor = prompt("Enter new color to add: ");
+    colors.splice(newcolorpos,0,newcolor);
+    document.writeln("<br><br>After Adding in at Desired position List<br><br>");
+    for (let index = 0; index < colors.length; index++) {
+        document.write(colors[index] + "<br>");
+    }    
+}
+function RemoveSpecificPos()
+{
+    var newcolorpos = prompt("Enter color to remove: ");
+    var ind = colors.indexOf(newcolorpos);
+    var num = parseInt(prompt("Enter numbers to remove: "));
+    colors.splice(ind,num);
+    document.writeln("<br><br>After removing List<br><br>");
+    for (let index = 0; index < colors.length; index++) {
+        document.write(colors[index] + "<br>");
+    }    
+}
+// Chapter 14 - Task 10
+
+var arrMarks =[320, 230, 480,120];
+document.write("Scores of Student: "+ arrMarks.join(",") + "<br>")
+arrMarks.sort();
+document.write("Ordered Scores of Student: "+ arrMarks.join(","))
+
+
+// Chapter 14 - Task 11
+
+var cities = ["Karachi","Lahore", "Islamabad","Quetta","Peshawar"];
+var selectedCities = [];
+for (let index = 2; index < 4; index++) {
+    selectedCities.push(cities[index]);
+}
+document.write("Cities List:<br> " + cities.join(",") + "<br>");
+document.write("Selected Cities List:<br> " + selectedCities.join(",") + "<br>");
+
+
+// Chapter 14 - Task 12
+var arr = ["This","is","my","cat"];
+document.write("Array:<br>" + arr.join(",") + "<br>String: <br>" + arr.join(" "));
+
+
+// Chapter 14 - Task 13
+var arrList = ["Keyboard", "Mouse", "Printer","Monitor"];
+document.write("Devices: <br>" + arrList.join(",") + "<br>");
+document.write("Out: <br>" + arrList[0] + "<br>");
+arrList.shift();
+document.write("Out: <br>" + arrList[0] + "<br>");
+arrList.shift();
+document.write("Out: <br>" + arrList[0] + "<br>");
+arrList.shift();
+document.write("Out: <br>" + arrList[0] + "<br>");
+arrList.shift();
+
+// Chapter 14 - Task 14
+var arrList = ["Keyboard", "Mouse", "Printer","Monitor"];
+document.write("Devices: <br>" + arrList.join(",") + "<br>");
+var inde = arrList.lastIndexOf()
+document.write("Out: <br>" + arrList[arrList.length - 1] + "<br>");
+arrList.pop();
+document.write("Out: <br>" + arrList[arrList.length - 1] + "<br>");
+arrList.pop();
+document.write("Out: <br>" + arrList[arrList.length - 1] + "<br>");
+arrList.pop();
+document.write("Out: <br>" + arrList[arrList.length - 1] + "<br>");
+arrList.pop();
+
+// Chapter 14 - Task 15
+
+var manufac = ["Apple","Samsung", "Motorola","Nokia","Sony","Haier"];
+document.write("<select>");
+for (let index = 0; index < manufac.length; index++) {
+    document.write("<option>" + manufac[index] + "</option>");
+}
+document.write("</select>");
+
+// CHAPTER 17-20
+
+// Chapter 17 - Task 1
+
+var MultiArr =[ [] ];
+
+// Chapter 17 - Task 2
+
+var MultiArr =[ [0,1,2,3] , [1,0,1,2] , [2,1,0,1] ];
+
+// Chapter 17 - Task 3
+ for (var a = 1 ; a <= 10 ; a++ ){
+     document.write(a + "<br>" )
+ }
+ 
+
+ // Chapter 17 - Task 5
+ var A = ["apple", "banana", "mango", "oorange", "strawberry"] 
+ document.write(A.join("<br>") + "<br>")
+ for (var i = 0 ; i < A.length ; i++){
+    document.write("Element at index " + i + " is " + A[i] + "<br>");
+ }
+
+ 
+// // Chapter 17 - Task 4
+var a = parseInt(prompt("enter the number"));
+var i = parseInt(prompt("enter the length"));
+for( j=1 ; j<=i ; j++){
+    document.write(a + "*" + j + "=" + a * j + "<br>");
+}
+
+
+// Chapter 17 - Task 6
+ document.write("<h2>COUNTING:</h2>")
+ for (var a = 0 ; a <= 15 ; a++ ){
+     document.write(a + " ")
+ }
+
+ document.write("<h2> REVERSE COUNTING:</h2>")
+ for (var a = 15 ; a >= 0 ; a-- ){
+     document.write(a + " ")
+ }
+
+ document.write("<h2>EVEN NUMBERS:</h2>")
+ for (var a = 0 ; a <= 20 ; a++ ){
+     if (a % 2 == 0){
+         document.write(a + " ")
+     }
+ }
+
+
+
+ document.write("<h2>ODD NUMBERS:</h2>")
+ for (var a = 0 ; a <= 20 ; a++ ){
+    if (a % 2 != 0){
+         document.write(a + " ")
+     }
+
+      }
+
+ document.write("<h2>SERIES:</h2>")
+ for (var a = 2 ; a <= 20 ; a=a+2 ){
+         document.write(a + "k," + " ")
+ }
+
+
+// Chapter 17 - Task 7
+ var B = ["cake", "apple pie", "cookie", "chips", "patties"] 
+ var a = prompt("WELCOME TO OUR BAKERY WHAT DO YOU WANT TO ORDER " , "check the availability" )
+ 
+    if(B.includes(a)){
+        alert(a + " is available at index " + B.indexOf(a) +" in our bakery")
+    }
+    else{
+        alert("We are sorry. we dont have " + a +" in our bakery");
+    }
+ 
+
+// Chapter 17 - Task 8
+ var A = [24,56,78,91,12];
+ document.write("List: " + A.join(",")+ "<br> ");
+ A.sort(function (a , b) {return a-b})
+ document.write( "THE SMALLEST VALUE IS " + A[0] + "<br>")
+
+ // Chapter 17 - Task 9
+ var A = [24,56,78,91,12];
+ document.write("List: " + A.join(",")+ "<br> ");
+ A.sort(function (a , b) {return b-a})
+ document.write( "THE LARGEST VALUE IS " + A[0] + "<br>")
+
+ 
+ // Chapter 17 - Task 10
+for (let index = 1; index <= 100; index++) {
+    if(index % 5 == 0)
+    {
+        document.write(index+ ",")
+    }
+    
+} 
+
