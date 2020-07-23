@@ -4,10 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Tasks</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <script src="app.js"></script>
+     <!-- Chapter 38-43 Question # 1 -->
+     <div class="d-flex">
+     <a href="#" onclick="alert('You have Purchased Mobile!')">Mobile</a>
+
+     <!-- Chapter 38-43 Question # 2 -->
+     <img id="swapPic" src="images/mobile.png" onclick="alert('You have Purchased Mobile!')" width="600" height="400">
+     <br><br>
+    </div>
+     <!-- Chapter 38-43 Question # 4 -->
+
+     <img id="swapPic" src="images/1.jpg" onmouseover="src='images/2.jpg'" onmouseout="src='images/1.jpg'" width="600" height="400">
+     <br><br><br>
+ 
+ 
+     <!-- Chapter 38-43 Question # 5 -->
+ 
+     <button onclick="increment()">Increment</button>
+     <h2 id="counter">0</h2>
+     <button onclick="decrement()">Decrement</button>
+ 
+     <script>
+         function increment() {
+             var counter = Number(document.getElementById('counter').innerHTML);
+             counter += 1;
+             var updated_Counter = document.getElementById('counter').innerHTML = counter;
+         }
+         function decrement() {
+             var counter = Number(document.getElementById('counter').innerHTML);
+             counter -= 1;
+             var updated_Counter = document.getElementById('counter').innerHTML = counter;
+         }
+     </script>
+
+
+
+    <!--<script src="app.js"></script>-->
    
 </body>
 </html>
